@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SlideShowMaker_Example' do
+  pod 'SlideShowMaker', :path => '../'
+
+  target 'SlideShowMaker_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
