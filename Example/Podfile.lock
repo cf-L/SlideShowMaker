@@ -1,0 +1,16 @@
+PODS:
+  - SlideShowMaker (0.1.0)
+
+DEPENDENCIES:
+  - SlideShowMaker (from `../`)
+
+EXTERNAL SOURCES:
+  SlideShowMaker:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SlideShowMaker: 8ea112cf036df297aba9d8b79f4ec964eca67acf
+
+PODFILE CHECKSUM: 2103a7441b2d49e80574e40486900728503d8611
+
+COCOAPODS: 1.2.1

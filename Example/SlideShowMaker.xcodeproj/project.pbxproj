@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F6774A51F4C213800648142 /* Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5F6774A41F4C213800648142 /* Sound.mp3 */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		240732DF6707CFAE4491A4DD /* Pods-SlideShowMaker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideShowMaker_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlideShowMaker_Tests/Pods-SlideShowMaker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		26DE362C271320455404D9EA /* Pods_SlideShowMaker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlideShowMaker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F884CB01BCB59725419519 /* Pods-SlideShowMaker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideShowMaker_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlideShowMaker_Example/Pods-SlideShowMaker_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		5F6774A41F4C213800648142 /* Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound.mp3; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SlideShowMaker_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideShowMaker_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,10 +45,10 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		709D2E9F3E0F38B34FA4C28D /* Pods-SlideShowMaker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideShowMaker_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlideShowMaker_Example/Pods-SlideShowMaker_Example.release.xcconfig"; sourceTree = "<group>"; };
 		9BFD3E6F19D447EC3361314A /* Pods-SlideShowMaker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideShowMaker_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlideShowMaker_Tests/Pods-SlideShowMaker_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		AE1920845E4E8413BD52EFF4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		AE1920845E4E8413BD52EFF4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B81734303DC9C5D5A39AE02F /* Pods_SlideShowMaker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlideShowMaker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C36A6A1438A27079289364D3 /* SlideShowMaker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SlideShowMaker.podspec; path = ../SlideShowMaker.podspec; sourceTree = "<group>"; };
-		CBED9A41D462A425AC623198 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		C36A6A1438A27079289364D3 /* SlideShowMaker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SlideShowMaker.podspec; path = ../SlideShowMaker.podspec; sourceTree = "<group>"; };
+		CBED9A41D462A425AC623198 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		607FACD21AFB9204008FA782 /* Example for SlideShowMaker */ = {
 			isa = PBXGroup;
 			children = (
+				5F6774A41F4C213800648142 /* Sound.mp3 */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -251,6 +254,7 @@
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				5F6774A51F4C213800648142 /* Sound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

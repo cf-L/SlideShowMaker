@@ -1,0 +1,6 @@
+framework module Pods_SlideShowMaker_Example {
+  umbrella header "Pods-SlideShowMaker_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

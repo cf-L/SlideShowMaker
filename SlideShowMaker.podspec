@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SlideShowMaker'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of SlideShowMaker.'
+  s.summary          = 'Multiple images to Video with animations'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Multiple images to Video with animations.
                        DESC
 
   s.homepage         = 'https://github.com/cf-L/SlideShowMaker'
