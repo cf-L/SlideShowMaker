@@ -83,15 +83,15 @@ extension VideoExporter {
     
     /// Add video and audio composition track
     fileprivate func addTrack(item: VideoItem, composition: AVMutableComposition) {
-        let _ = composition.addMutableTrack(withMediaType: AVMediaTypeVideo, preferredTrackID: videoTrackID)
+        let _ = composition.addMutableTrack(withMediaType: .video, preferredTrackID: videoTrackID)
         if item.audio != nil {
-            let _ = composition.addMutableTrack(withMediaType: AVMediaTypeAudio, preferredTrackID: audioTrackID)
+            let _ = composition.addMutableTrack(withMediaType: .audio, preferredTrackID: audioTrackID)
         }
     }
     
     /// Add video to composition
     fileprivate func insert(item: VideoItem, videoCompositionTrack: AVMutableCompositionTrack, timeRange: CMTimeRange) {
-        guard let videoTrack = item.video.tracks(withMediaType: AVMediaTypeVideo).first else { return }
+        guard let videoTrack = item.video.tracks(withMediaType: .video).first else { return }
         
         try? videoCompositionTrack.insertTimeRange(timeRange, of: videoTrack, at: kCMTimeZero)
     }
@@ -134,7 +134,7 @@ extension VideoExporter {
     }
     
     fileprivate func addAudio(audio: AVURLAsset, start: CMTime, timeRage: CMTimeRange, audioCompositionTrack: AVMutableCompositionTrack) {
-        if let track = audio.tracks(withMediaType: AVMediaTypeAudio).first {
+        if let track = audio.tracks(withMediaType: .audio).first {
             try? audioCompositionTrack.insertTimeRange(timeRage, of: track, at: start)
         }
     }
@@ -149,7 +149,7 @@ extension VideoExporter {
         self.exporter = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetHighestQuality)
         if let exporter = self.exporter {
             exporter.outputURL = path
-            exporter.outputFileType = AVFileTypeQuickTimeMovie
+            exporter.outputFileType = .mov
             exporter.shouldOptimizeForNetworkUse = true
             exporter.timeRange = CMTimeRange(start: kCMTimeZero, duration: duration)
             
