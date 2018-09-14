@@ -201,7 +201,7 @@ public class VideoMaker: NSObject {
         self.calculateTime()
         
         // writer
-        self.videoWriter = try? AVAssetWriter(outputURL: path, fileType: AVFileTypeQuickTimeMovie)
+        self.videoWriter = try? AVAssetWriter(outputURL: path, fileType: .mov)
         
         guard let videoWriter = self.videoWriter else {
             print("Create video writer failed")
@@ -216,7 +216,7 @@ public class VideoMaker: NSObject {
             AVVideoHeightKey: self.size.height
             ] as [String : Any]
         
-        let writerInput = AVAssetWriterInput(mediaType: AVMediaTypeVideo, outputSettings: videoSettings)
+        let writerInput = AVAssetWriterInput(mediaType: .video, outputSettings: videoSettings)
         videoWriter.add(writerInput)
         
         // adapter
@@ -257,7 +257,7 @@ public class VideoMaker: NSObject {
         self.deletePreviousTmpVideo(url: path)
         
         // writer
-        self.videoWriter = try? AVAssetWriter(outputURL: path, fileType: AVFileTypeQuickTimeMovie)
+        self.videoWriter = try? AVAssetWriter(outputURL: path, fileType: .mov)
         
         guard let videoWriter = self.videoWriter else {
             print("Create video writer failed")
@@ -272,7 +272,7 @@ public class VideoMaker: NSObject {
             AVVideoHeightKey: self.size.height
         ] as [String : Any]
         
-        let writerInput = AVAssetWriterInput(mediaType: AVMediaTypeVideo, outputSettings: videoSettings)
+        let writerInput = AVAssetWriterInput(mediaType: .video, outputSettings: videoSettings)
         videoWriter.add(writerInput)
         
         // adapter

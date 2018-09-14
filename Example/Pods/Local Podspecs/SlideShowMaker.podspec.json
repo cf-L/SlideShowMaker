@@ -1,8 +1,8 @@
 {
   "name": "SlideShowMaker",
   "version": "0.1.0",
-  "summary": "A short description of SlideShowMaker.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "Multiple images to Video with animations",
+  "description": "Multiple images to Video with animations.",
   "homepage": "https://github.com/cf-L/SlideShowMaker",
   "license": {
     "type": "MIT",
@@ -16,7 +16,7 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
   "source_files": "SlideShowMaker/Classes/**/*"
 }
