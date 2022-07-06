@@ -48,7 +48,7 @@ public class VideoExporter: NSObject {
         self.addTrack(item: item, composition: self.mixComposition)
         let videoCompositionTrack = self.mixComposition.track(withTrackID: videoTrackID)!
         
-        let timeRange = CMTimeRange(start: kCMTimeZero, duration: item.video.duration)
+        let timeRange = CMTimeRange(start: CMTime.zero, duration: item.video.duration)
         
         self.insert(
             item: item,
@@ -93,14 +93,14 @@ extension VideoExporter {
     fileprivate func insert(item: VideoItem, videoCompositionTrack: AVMutableCompositionTrack, timeRange: CMTimeRange) {
         guard let videoTrack = item.video.tracks(withMediaType: .video).first else { return }
         
-        try? videoCompositionTrack.insertTimeRange(timeRange, of: videoTrack, at: kCMTimeZero)
+        try? videoCompositionTrack.insertTimeRange(timeRange, of: videoTrack, at: CMTime.zero)
     }
     
     /// Add music
     fileprivate func addMusic(item: VideoItem, audioCompositionTrack: AVMutableCompositionTrack) {
         guard let audio = item.audio else { return }
         
-        let audioStart = item.audioTimeRange != nil ? item.audioTimeRange!.start : kCMTimeZero
+        let audioStart = item.audioTimeRange != nil ? item.audioTimeRange!.start : CMTime.zero
         let audioDuration = item.audioTimeRange != nil ? item.audioTimeRange!.duration : audio.duration
         let audioTimescale = audio.duration.timescale
         let videoDuratin = item.video.duration
@@ -129,7 +129,7 @@ extension VideoExporter {
             }
         } else {
             let timeRange = CMTimeRange(start: audioStart, duration: videoDuratin)
-            self.addAudio(audio: audio, start: kCMTimeZero, timeRage: timeRange, audioCompositionTrack: audioCompositionTrack)
+            self.addAudio(audio: audio, start: CMTime.zero, timeRage: timeRange, audioCompositionTrack: audioCompositionTrack)
         }
     }
     
@@ -151,7 +151,7 @@ extension VideoExporter {
             exporter.outputURL = path
             exporter.outputFileType = .mov
             exporter.shouldOptimizeForNetworkUse = true
-            exporter.timeRange = CMTimeRange(start: kCMTimeZero, duration: duration)
+            exporter.timeRange = CMTimeRange(start: CMTime.zero, duration: duration)
             
             let timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.readProgress), userInfo: nil, repeats: true)
             
@@ -159,7 +159,7 @@ extension VideoExporter {
                 
                 timer.invalidate()
                 
-                if exporter.status == AVAssetExportSessionStatus.failed {
+                if exporter.status == AVAssetExportSession.Status.failed {
                     print(#function, exporter.error ?? "unknow error")
                     self.exportingBlock?(false, nil, nil, exporter.error)
                 } else {

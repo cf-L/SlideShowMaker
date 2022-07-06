@@ -18,7 +18,7 @@ public class VideoMaker: NSObject {
     public var transition: ImageTransition = .none
     public var movement: ImageMovement = .none
     public var movementFade: MovementFade = .upLeft
-    public var contentMode = UIViewContentMode.scaleAspectFit
+    public var contentMode = UIView.ContentMode.scaleAspectFit
     
     public var progress: Progress?
     
@@ -298,7 +298,7 @@ public class VideoMaker: NSObject {
     {
         
         videoWriter.startWriting()
-        videoWriter.startSession(atSourceTime: kCMTimeZero)
+        videoWriter.startSession(atSourceTime: CMTime.zero)
         
         var presentTime = CMTime(seconds: 0, preferredTimescale: Int32(self.timescale))
         var i = 0
@@ -310,7 +310,7 @@ public class VideoMaker: NSObject {
                 }
                 
                 let duration = self.isMovement ? self.transitionDuration : self.frameDuration
-                presentTime = CMTimeMake(Int64(i * duration), Int32(self.timescale))
+                presentTime = CMTimeMake(value: Int64(i * duration), timescale: Int32(self.timescale))
                 
                 let presentImage = self.images[i]
                 let nextImage: UIImage? = self.images.count > 1 && i != self.images.count - 1 ? self.images[i + 1] : nil
@@ -369,8 +369,8 @@ public class VideoMaker: NSObject {
                 bufferAdapter.append(buffer, withPresentationTime: presentTime)
                 self.currentProgress += self.waitTranstionTimeRate
                 
-                let transitionTime = CMTimeMake(Int64(self.transitionDuration), Int32(self.transitionFrameCount * self.timescale))
-                presentTime = CMTimeAdd(presentTime, CMTimeMake(Int64(self.frameDuration - self.transitionDuration), Int32(self.timescale)))
+                let transitionTime = CMTimeMake(value: Int64(self.transitionDuration), timescale: Int32(self.transitionFrameCount * self.timescale))
+                presentTime = CMTimeAdd(presentTime, CMTimeMake(value: Int64(self.frameDuration - self.transitionDuration), timescale: Int32(self.timescale)))
                 
                 if position + 1 < self.images.count {
                     if self.transition != .none {
@@ -410,7 +410,7 @@ public class VideoMaker: NSObject {
         var presentTime = time
         
         if let cgImage = presentImage?.cgImage {
-            let movementTime = CMTimeMake(Int64(self.transitionDuration), Int32(self.transitionFrameCount * self.timescale))
+            let movementTime = CMTimeMake(value: Int64(self.transitionDuration), timescale: Int32(self.transitionFrameCount * self.timescale))
             
             let timeRate = self.currentProgress
             for j in 1...self.transitionFrameCount {
